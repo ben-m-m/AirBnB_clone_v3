@@ -156,6 +156,14 @@ No known bugs at this time.
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+Benson Maina
+Dennis Muvaa
+##AirBnB clone - RESTful API
+Python
+Back-end
+API
+Webserver
+Flask
 
 Second part of Airbnb: Joann Vuong
 ## License
