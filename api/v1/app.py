@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""flask app - model"""
 from os import environ
 from flask import Flask
 from models import storage
