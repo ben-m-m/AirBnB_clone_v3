@@ -74,7 +74,7 @@ class FileStorage:
 
     def get(self, cls, id):
         """Retrieve one object."""
-        if cls not in classes.values():
+        if cls.__name__ not in classes:
             return None
 
         all_classes = models.storage.all(cls)

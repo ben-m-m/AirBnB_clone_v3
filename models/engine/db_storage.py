@@ -89,11 +89,7 @@ class DBStorage:
         """retrieve object"""
         if cls not in classes.values():
             return None
-
-        all_cls = models.storage.all(cls)
-        for value in all_cls.values():
-            if (value.id == id):
-                return value
+        return self.__session.query(cls).filter_by(id=id).first()
 
     def count(self, cls=None):
         """Count number of objects in storage"""
@@ -101,4 +97,4 @@ class DBStorage:
             return self.__session.query(cls).count()
         else:
             return sum(
-                self.__session.query(cls).count() for cls in [State, City])
+                self.__session.query(class_).count() for class_ in classes.values())
