@@ -61,7 +61,6 @@ class FileStorage:
     def count(self, cls=None):
         """count the number of objects in storage"""
 
-
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
         if obj is not None:
@@ -75,10 +74,13 @@ class FileStorage:
 
     def get(self, cls, id):
         """Retrieve one object."""
-        if cls and id:
-            key = "{}.{}".format(cls.__name__, id)
-            return FileStorage.__objects.get(key)
-        return None
+        if cls not in classes.values():
+            return None
+
+        all_classes = models.storage.all(cls)
+        for value in all_classes.values():
+            if (value.id == id):
+                return value
 
     def count(self, cls=None):
         """count objects in storage"""
