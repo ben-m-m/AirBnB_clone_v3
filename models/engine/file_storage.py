@@ -58,6 +58,10 @@ class FileStorage:
         except:
             pass
 
+    def count(self, cls=None):
+        """count the number of objects in storage"""
+
+
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
         if obj is not None:
