@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""flask app - model"""
+
+"""Imports a model"""
+
 from flask import Flask
 from os import getenv
 from models import storage
@@ -13,10 +15,12 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown_db(exception=None):
+    """call"""
     storage.close()
 
 
 if __name__ == "__main__":
+    """main"""
     host = getenv('HBNB_API_HOST', '0.0.0.0')
     port = getenv('HBNB_API_PORT', 5000)
 
